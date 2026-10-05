@@ -1,5 +1,5 @@
- *.exe
-   *.ilk
-   *.obj
-   *.pdb
-   .vscode/
+*.exe
+*.ilk
+*.obj
+*.pdb
+.vscode/
