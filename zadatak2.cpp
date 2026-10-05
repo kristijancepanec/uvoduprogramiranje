@@ -1,12 +1,10 @@
-
-/*   Zadatak 03. Omogućite korisniku unos 2 cjelobrojne vrijednosti. Ispišite unesene brojeve umanjene za 1. Primjer:
+/*   Zadatak 02. Omogućite korisniku unos 3 cjelobrojne vrijednosti. Unesene brojeve ispišite u jednom retku odvojene zarezom. Primjer:
 UNOS
-1. broj: 7
-2. broj: 3
+Unesite 1. broj: 5
+Unesite 2. broj: 8
+Unesite 3. broj: 3
 ISPIS
-1. broj - 1: 6
-2. broj - 1: 2
-
+Ispis brojeva: 3, 8, 5
   */
 #include <iostream>
 using namespace std;
@@ -14,14 +12,19 @@ using namespace std;
 int main (){
 
 int a;
-cout << "Unesi prvu cjelobrojnu vrijednost" << endl;
+cout << "Unesi prvu vrijednost" << endl;
 cin >> a;
 
 int b;
-cout << "Unesi drugu cjelobrojnu vrijednost" << endl;
+cout << "Unesi drugu vrijednost" << endl;
 cin >> b;
 
-cout << "Umanjena prva vrijednost je: " << a - 1 << endl;
-cout << "Umanjena druga vrijednost je: " << b - 1 << endl;
+int c;
+cout << "Unesi trecu vrijednost" << endl;
+cin >> c;
+
+cout << "Ispis: " << c << ", " << b << ", " << a << endl;
+
+
 
 }
