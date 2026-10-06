@@ -1,0 +1,48 @@
+Kako koristiti simulacije
+
+Svaka simulacija je jedan program: ponavljajući izbornik i 3 zadatka, isto kao bodovane vježbe 5, 8 i 11. Rješavaj je u Verifikatoru, u komadu, bez gledanja u predavanja.
+
+Format kolokvija nigdje nije opisan u materijalima. Ovaj format je procjena prema vježbama 5 (izbornik 2 boda + 3 zadatka po 2 boda), 8 i 11 te integracijskom primjeru „polje trokuta“ iz predavanja 9. Upute kažu da pravila testiranja vrijede i na pismenom ispitu.
+
+  ------------------------------------------------------------------------------------------------------------------
+  Simulacija        Predavanja        Teme                                                         Težina (1–5)
+  ----------------- ----------------- ------------------------------------------------------------ -----------------
+  1                 1–4               znamenke, switch, for, while, rand, bitovni operatori        2
+
+  2                 1–5               ugniježđene petlje, break, continue                          3
+
+  3                 1–6               polja, strukture, memcpy                                     3
+
+  4                 7                 2D polja, znakovni nizovi, string                            3
+
+  5                 8–9               potprogrami, reference, static, preopterećenje, biblioteka   3–4
+
+  6                 9                 polje struktura s izbornikom                                 4
+
+  7                 10                pokazivači, dinamička alokacija                              4
+
+  8                 10–11             vezana lista                                                 4–5
+  ------------------------------------------------------------------------------------------------------------------
+
+Pravila koja si postaviš kao na pravom terminu:
+
+-   Izbornik: do...while + switch, opcija 9 je izlaz, default ispisuje „Pogresan unos.“.
+-   Prevedi program najkasnije svakih 10 novih linija (semafor).
+-   Testiraj kad se pojavi novi postotak (3, 8, 13, 18… blokova). Svi postoci moraju biti 100 %; na dno _test.cpp upiši npr. //Postoci testiranja: 100% 100%.
+-   Vrijeme: predlažem 90 minuta po simulaciji. Točno trajanje kolokvija nije u materijalima.
+-   Ispis piši bez dijakritika, kao u primjerima. Primjeri izvođenja su provjereni pokretanjem programa; brojevi kod nasumičnih zadataka bit će ti drugačiji.
+-   Samoprocjena: izbornik 2 boda, svaki zadatak 2 boda (1 bod ako radi djelomično), minus 1 bod za svaki postotak testiranja ispod 100 %.
+
+
+Česte zamke
+
+-   Varijabla u case. Deklaracija s inicijalizacijom unutar jednog case daje sintaksnu grešku. Deklariraj varijable prije switch ili bez inicijalizacije (predavanje 9).
+-   Preskočen getline. Nakon cin >> izbor u međuspremniku ostaje \n; prije cin.getline ili getline pozovi cin.ignore() (predavanja 7 i 9).
+-   Cjelobrojno dijeljenje. zbroj / n s dva int odbacuje decimale; piši (float) zbroj / n.
+-   Nasumični raspon. Broj od min do max je rand() % (max - min + 1) + min. srand(time(0)) pozovi jednom na početku main, ne u funkciji koju zoveš više puta.
+-   hex i oct ostaju uključeni. Nakon njih vrati ispis s dec, inače su svi idući brojevi u krivom sustavu.
+-   Polja se ne kopiraju s =. Koristi petlju ili memcpy(odrediste, izvor, sizeof(izvor)); strukture se smiju kopirati s = (predavanje 6).
+-   strcmp vraća 0 za jednake nizove. if (strcmp(a, b)) znači da su različiti.
+-   Podrazumijevani argumenti idu na kraj liste argumenata. Referenca kao argument ne prima literal ni konstantu (predavanje 9).
+-   delete ili delete []. Za polje alocirano s new int[n] treba delete []; bez dealokacije memorija curi (predavanje 10).
+-   Netestirani blokovi. Svaka grana (poruka o grešci, default, prazna lista, „polje je puno“) je programski blok koji moraš izvršiti barem jednom. Prije pisanja smisli unos koji pogodi svaku granu, inače postotak testiranja padne ispod 100 % i gubiš bod.
