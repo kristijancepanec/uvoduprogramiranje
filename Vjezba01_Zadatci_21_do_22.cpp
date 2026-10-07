@@ -17,7 +17,13 @@ using namespace std;
 
 int main (){
 
+int troznamenkasti_broj;
+cout << "Unesi troznamenkasti broj: " << endl;
+cin >> troznamenkasti_broj;
 
+cout << "Jedinica: " << troznamenkasti_broj % 10 << endl;
+cout << "Desetica: " << (troznamenkasti_broj / 10) % 10 << endl;
+cout << "Stotica: " << (troznamenkasti_broj / 100) << endl;
 
 }
 
@@ -36,6 +42,17 @@ using namespace std;
 
 int main (){
 
+int vrijeme;
+cout << "Unesi vrijeme (sekunde)" << endl;
+cin >> vrijeme;
+
+int sati = vrijeme / 3600;
+int minute = (vrijeme / 60) % 60;
+int sekunde = vrijeme % 60;
+
+cout << "Sati: " << sati << endl;
+cout << "Minute: " << minute << endl;
+cout << "Sekunde: " << sekunde << endl;
 
 
 }
