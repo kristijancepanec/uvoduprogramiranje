@@ -17,7 +17,83 @@ using namespace std;
 
 int main (){
 
+int a;
+cout << "Unesi prvi cjelobrojnu vrijednost (dan u mjesecu)" << endl; 
+cin >> a; 
 
+int b;
+cout << "Unesi drugu cjelobrojnu vrijednost (redni broj mjeseca)" << endl; 
+cin >> b;
+
+/*
+Ovaj zadatak nisam najbolje znao pa ga ovdje pojasnjavam. Znaci najlakse je koristiti switch koliko sam skuzio jer su ovo sve neke ocekivane vrijednosti i onda je
+lakse strukturirati program nego da to radimo sa if i else. Za if else bi trebali napraviti puno svega i svacega i izgledalo bi sve bez veze, odnosno teze je za citanje.
+Uglavnom u slucaju kada je prvi mjesec / case 1 / ispisuje se sijecanja i ujedino ostatak dana do kraja.  
+*/
+
+switch (b) {
+        case 1:
+            cout << "Trenutni mjesec: Sijecanj" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 31 - a;
+            break;
+
+        case 2:
+            cout << "Trenutni mjesec: Veljaca" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 28 - a;
+            break;
+
+        case 3:
+            cout << "Trenutni mjesec: Ozujak" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 31 - a;
+            break;
+
+        case 4:
+            cout << "Trenutni mjesec: Travanj" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 30 - a;
+            break;
+
+        case 5:
+            cout << "Trenutni mjesec: Svibanj" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 31 - a;
+            break;
+
+        case 6:
+            cout << "Trenutni mjesec: Lipanj" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 30 - a;
+            break;
+
+        case 7:
+            cout << "Trenutni mjesec: Srpanj" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 31 - a;
+            break;
+
+        case 8:
+            cout << "Trenutni mjesec: Kolovoz" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 31 - a;
+            break;
+
+        case 9:
+            cout << "Trenutni mjesec: Rujan" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 30 - a;
+            break;
+
+        case 10:
+            cout << "Trenutni mjesec: Listopad" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 31 - a;
+            break;
+
+        case 11:
+            cout << "Trenutni mjesec: Studeni" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 30 - a;
+            break;
+
+        case 12:
+            cout << "Trenutni mjesec: Prosinac" << endl;
+            cout << "Broj dana do kraja mjeseca: " << 31 - a;
+            break;
+}
+
+return 0; 
 
 }
 
@@ -33,12 +109,24 @@ int main (){
 */
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main (){
 
+double a; 
+cout << "Unesi decimalnu vrijednost: " << endl; 
+cin >> a; 
 
+double zadnjaznamenka = (int) (a * 10) % 10; // ovo funkcionira na nacin da pretvori ovo u int, cijeli broj. Dalje, imam a * 10 sto onda baca jedno decimalno mjesto natrag, a % 10 nam baca zadnju znamenku. 
 
+if (zadnjaznamenka >= 5) {
+    cout << "Unio si broj kojema ju prva znamenka nakon tocke pet ili veca, dajem rezultat; " << ceil (a) << endl; // najlakse je koristiti cmath library jer vec postoje ove funkcije za zaokruzivanje :)
+} else if (zadnjaznamenka <= 4) {
+    cout << "Unio si broj kojema ju prva znamenka nakon tocke 4 ili manja, dajem rezultat; " << floor (a) << endl; // najlakse je koristiti cmath library jer vec postoje ove funkcije za zaokruzivanje :)
+}
+
+return 0; 
 }
 
 /*  Zadatak 33. Omogućite korisniku unos decimalne vrijednosti (jedna decimala). Ispišite je li uneseni broj cijeli broj ili decimalni broj (Pomoć: Morate otkriti je li znamenka iza točke jednaka 0, pokušajte koristiti množenje i modulo kako biste došli do te vrijednosti). Primjer:
@@ -57,7 +145,19 @@ using namespace std;
 
 int main (){
 
+double decimalna;
+cout << "Unesi cjelobrojnu decimalnu vrijednost" << endl; 
+cin >> decimalna;
 
+double decimalnibroj = (int) (decimalna * 10) % 10; // funkcionira isto kao i u proslom zadatku na nacin da 3.6 prvo pretvori u 3 (int) / dalje uzima 3 * 10 kaj je 30 / onda ide 30 % 10 - ispituje kaj ti ostane? u kutiju od 30 mozes staviti 3 necega od 10, ostao si bez icega (0) / tako zapravo onda znas da ti je broj cijeli. ako stavis 3.1 ostalo ti bude jedan bombon na zadnjem koraku i ispisat ce ti program da imas 0.1 jos kaj je zapravo decimala. 
+
+if (decimalnibroj == 0) {
+    cout << "Ovo je cijeli broj!" << endl;
+} else {
+    cout << "Ovo je decimalni broj!" << endl;
+}
+
+return 0; 
 
 }
 
