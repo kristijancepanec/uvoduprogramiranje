@@ -178,8 +178,57 @@ using namespace std;
 
 int main (){
 
+int broj1, broj2, broj3, broj4;
+cout << "Unesite prvi broj: " << endl; 
+cin >> broj1; 
 
+cout << "Unesite drugi broj: " << endl; 
+cin >> broj2; 
 
+cout << "Unesite treci broj: " << endl; 
+cin >> broj3; 
+
+cout << "Unesite cetvrti broj: " << endl; 
+cin >> broj4; 
+
+int suma_pozitivnih = 0; // gdje god se nesto mora zbrajati, dobro je staviti varijablu na 0, jer ako stavis nesto drugo, onda ce ti se to dodavati na pocetnu vrijednost i nece ti biti tocno.
+int suma_negativnih = 0; // gdje god se nesto mora zbrajati, dobro je staviti varijablu na 0, jer ako stavis nesto drugo, onda ce ti se to dodavati na pocetnu vrijednost i nece ti biti tocno.
+
+if (broj1 > 0)
+{
+   
+    suma_pozitivnih = suma_pozitivnih + broj1; // ovo zbraja od nule plus prvi broj
+} if (broj2 > 0) {
+  
+     suma_pozitivnih = suma_pozitivnih + broj2; // ovo zbraja prvi broj i drugi koji se upise, sumira se onda 
+} if (broj3 > 0) {
+    
+     suma_pozitivnih = suma_pozitivnih + broj3; // ovo zbraja prvi broj, drugi i treci koji se upise, sumira se onda 
+}  if (broj4 > 0) {
+    
+    suma_pozitivnih = suma_pozitivnih + broj4; // ovo zbraja sve brojeve, a cout ti mora biti izvan if-a. 
+    
+    
+}
+cout <<  "Zbroj pozitivnih brojeva: " << suma_pozitivnih << endl;  
+
+if (broj1 < 0)
+{
+   
+    suma_negativnih = suma_negativnih + broj1;
+} if (broj2 < 0) {
+  
+     suma_negativnih = suma_negativnih + broj2;
+} if (broj3 < 0) {
+    
+     suma_negativnih = suma_negativnih + broj3;
+}  if (broj4 < 0) {
+    
+    suma_negativnih = suma_negativnih + broj4;
+}
+ cout <<  "Zbroj negativnih brojeva: " << suma_negativnih << endl;  
+
+return 0;
 }
 
 /*  Zadatak 35. Omogućite korisniku unos 4 cjelobrojne vrijednosti. Ispišite posebno umnožak parnih brojeva a posebno umnožak neparnih brojeva (Pomoć: kreirajte pomoćne varijable - umnozak_parnih i umnozak_neparnih - pripazite da ako množite onda početna vrijednost tim varijablama treba biti 1 a ne 0). Primjer:
@@ -191,7 +240,7 @@ int main (){
     Unesite 4. broj: 5
     ISPIS
     Umnozak parnih brojeva: 8
-    Umnozak neparnih brojeva: -15
+    Umnozak neparnih brojeva: -15 // ista prica kao i kod zadatka gore,  moras spremati umnozak svakog broja u pomocne varijable i onda ga ispisati VAN samog IF-a
 */
 
 #include <iostream>
@@ -199,8 +248,60 @@ using namespace std;
 
 int main (){
 
+int broj1, broj2, broj3, broj4;
+cout << "Unesite prvi broj: " << endl; 
+cin >> broj1; 
+
+cout << "Unesite drugi broj: " << endl; 
+cin >> broj2; 
+
+cout << "Unesite treci broj: " << endl; 
+cin >> broj3; 
+
+cout << "Unesite cetvrti broj: " << endl; 
+cin >> broj4; 
+
+int umnozak_parnih  = 1;
+int umnozak_neparnih = 1; 
+
+if (broj1 % 2 == 0) {
+        umnozak_parnih = umnozak_parnih * broj1;
+} 
+
+if (broj2 % 2 == 0) {
+        umnozak_parnih = umnozak_parnih * broj2;
+}
+
+if (broj3 % 2 == 0) {
+        umnozak_parnih = umnozak_parnih * broj3;
+}
+
+if (broj4 % 2 == 0) {
+      umnozak_parnih = umnozak_parnih * broj4;
+}
+
+cout << "Umnozak parnih brojeva je: " << umnozak_parnih << "." << endl; 
 
 
+if (broj1 % 2 != 0) {
+     umnozak_neparnih = umnozak_neparnih * broj1;
+}
+
+if (broj2 % 2 != 0) {
+     umnozak_neparnih = umnozak_neparnih * broj2;
+}
+
+
+if (broj3 % 2 != 0) {
+     umnozak_neparnih = umnozak_neparnih * broj3;
+}
+
+
+if (broj4 % 2 != 0) {
+     umnozak_neparnih = umnozak_neparnih * broj4;
+}
+cout << "Umnozak neparnih brojeva je: " << umnozak_neparnih << "." << endl; 
+return 0; 
 }
 
 /*  Zadatak 36. Omogućite korisniku unos 3 decimalna broja. Ispišite upisane brojeve poredane od najvećeg prema najmanjem. Primjer:
@@ -219,10 +320,58 @@ int main (){
 #include <iostream>
 using namespace std;
 
-int main (){
+int main() {
 
+    double a, b, c;
 
+    cout << "Unesi prvi broj:" << endl;
+    cin >> a;
 
+    cout << "Unesi drugi broj:" << endl;
+    cin >> b;
+
+    cout << "Unesi treci broj:" << endl;
+    cin >> c;
+
+    cout << "Brojevi od najveceg prema najmanjem:" << endl;
+
+    if (a > b && a > c) {
+        cout << a << endl;
+
+        if (b > c) {
+            cout << b << endl;
+            cout << c << endl;
+        } else {
+            cout << c << endl;
+            cout << b << endl;
+        }
+    }
+
+    if (b > a && b > c) {
+        cout << b << endl;
+
+        if (a > c) {
+            cout << a << endl;
+            cout << c << endl;
+        } else {
+            cout << c << endl;
+            cout << a << endl;
+        }
+    }
+
+    if (c > a && c > b) {
+        cout << c << endl;
+
+        if (a > b) {
+            cout << a << endl;
+            cout << b << endl;
+        } else {
+            cout << b << endl;
+            cout << a << endl;
+        }
+    }
+
+    return 0;
 }
 
 /*  Zadatak 37. Omogućite korisniku unos cjelobrojne vrijednosti od 1 do 10. Ispišite zbroj brojeva od 1 do unesene vrijednosti. Ako nije upisana ispravna ulazna vrijednost, ispišite „Pogrešna ulazna vrijednost.” (Pomoć: Treba li koristiti naredbu break? Možda samo na jednom mjestu…) Primjer:
@@ -238,8 +387,23 @@ using namespace std;
 
 int main (){
 
+int a;
+cout << "Unesi cjelobrojnu vrijednost od 1 do 10: " << endl; 
+cin >> a; 
 
+int zbrajanje = 0; 
+int i;
 
+for (i = 1; i <= a; i++) {
+     zbrajanje = zbrajanje + i; 
+}
+
+if (a > 0 && a < 10) {
+    cout << "Zbroj brojeva: " << zbrajanje << "." << endl; 
+} else {
+    cout << "Pogrešna ulazna vrijednost." << endl; 
+}
+return 0; 
 }
 
 /*  Zadatak 38. Omogućite korisniku unos troznamenkastog pozitivnog cijelog broja. Ispišite taj broj riječima (Pomoć: Potrebno je prvo izolirati znamenke (to je moguće učiniti korištenjem dijeljenja i modula) a nakon toga ovisno o vrijednostima znamenki ispisati odgovarajući niz nakova). Primjer:
@@ -255,7 +419,137 @@ using namespace std;
 
 int main (){
 
+int a;
+cout << "Unesi troznamenkasti pozitivni broj: " << endl; 
+cin >> a; 
 
+int jedinice = a % 10; 
+int desetice = (a /10) % 10;
+int stotice = a / 100; 
+
+cout << "Stotice: " << stotice << endl; 
+cout << "Desetice: " << desetice << endl; 
+cout << "Jedinice: " << jedinice << endl; 
+cout << "Uneseni broj: " << stotice << desetice << jedinice << endl; 
+
+switch (stotice) {
+    case 1:
+        cout << "Sto ";
+        break;
+    case 2:
+        cout << "Dvjesto ";
+        break;
+    case 3:
+        cout << "Tristo ";
+        break;
+    case 4:
+        cout << "Cetiristo ";
+        break;
+    case 5:
+        cout << "Petsto ";
+        break;
+    case 6:
+        cout << "Seststo ";
+        break;
+    case 7:
+        cout << "Sedamsto ";
+        break;
+    case 8:
+        cout << "Osamsto ";
+        break;
+    case 9:
+        cout << "Devetsto ";
+        break;
+    default:
+        break;
+}
+
+switch (desetice) {
+    case 1:
+        if (jedinice == 0)
+            cout << "deset ";
+        else if (jedinice == 1)
+            cout << "jedanaest ";
+        else if (jedinice == 2)
+            cout << "dvanaest ";
+        else if (jedinice == 3)
+            cout << "trinaest ";
+        else if (jedinice == 4)
+            cout << "cetrnaest ";
+        else if (jedinice == 5)
+            cout << "petnaest ";
+        else if (jedinice == 6)
+            cout << "sesnaest ";
+        else if (jedinice == 7)
+            cout << "sedamnaest ";
+        else if (jedinice == 8)
+            cout << "osamnaest ";
+        else
+            cout << "devetnaest ";
+        break;
+
+    case 2:
+        cout << "dvadeset ";
+        break;
+    case 3:
+        cout << "trideset ";
+        break;
+    case 4:
+        cout << "cetrdeset ";
+        break;
+    case 5:
+        cout << "pedeset ";
+        break;
+    case 6:
+        cout << "sezdeset ";
+        break;
+    case 7:
+        cout << "sedamdeset ";
+        break;
+    case 8:
+        cout << "osamdeset ";
+        break;
+    case 9:
+        cout << "devedeset ";
+        break;
+    default:
+        break;
+}
+
+
+
+switch (jedinice) {
+      case 1:
+        cout << "jedan";
+        break;
+    case 2:
+        cout << "dva";
+        break;
+    case 3:
+        cout << "tri";
+        break;
+    case 4:
+        cout << "cetiri";
+        break;
+    case 5:
+        cout << "pet";
+        break;
+    case 6:
+        cout << "sest";
+        break;
+    case 7:
+        cout << "sedam";
+        break;
+    case 8:
+        cout << "osam";
+        break;
+    case 9:
+        cout << "devet";
+        break;
+    default:
+        break;
+}
+return 0; 
 
 }
 
@@ -274,8 +568,33 @@ int main (){
 #include <iostream>
 using namespace std;
 
+#include <iostream>
+using namespace std;
+
 int main (){
 
+char a;
+int b;
 
+    cout << "Unesite znak: ";
+    cin >> a;
+
+    cout << "Unesite broj: ";
+    cin >> b;
+    
+    
+  if (b < 5 || b > 10) {
+        cout << "Nedozvoljena ulazna vrijednost." << endl;
+        return 0;
+    }
+    
+      for (int i = b; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            cout << a;
+        }
+        cout << endl;
+    }
+
+    return 0;
 
 }
